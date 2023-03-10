@@ -32,7 +32,23 @@
             
         }
     ],
-	"globalStyle": {
+	"subPackages": [
+	  {
+	    "root": "subpkg",
+      "pages": [
+        
+      {
+                    "path" : "goods_detail/goods_detail",
+                    "style" :                                                                                    
+                {
+                    
+                }
+                
+                }
+            ]
+	  }
+	],
+  "globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "购物小程序开发",
 		"navigationBarBackgroundColor": "#C00000",

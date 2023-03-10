@@ -6,6 +6,7 @@ if (!Math) {
   "./pages/cate/cate.js";
   "./pages/cart/cart.js";
   "./pages/my/my.js";
+  "./subpkg/goods_detail/goods_detail.js";
 }
 const _sfc_main = {
   onLaunch: function() {
@@ -20,6 +21,23 @@ const _sfc_main = {
   }
 };
 const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "F:/minipro/uni-shop/App.vue"]]);
+common_vendor.index.$http = common_vendor.$http;
+common_vendor.$http.baseUrl = "https://www.uinav.com";
+common_vendor.$http.beforeRequest = function(options) {
+  common_vendor.index.showLoading({
+    title: "数据加载中..."
+  });
+};
+common_vendor.$http.afterRequest = function() {
+  common_vendor.index.hideLoading();
+};
+common_vendor.index.$showMsg = function(title = "数据请求失败", duration = 1500) {
+  common_vendor.index.showToast({
+    title,
+    duration,
+    icon: "none"
+  });
+};
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {
